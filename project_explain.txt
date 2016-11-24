@@ -1,0 +1,16 @@
+
+Android处理耗时操作（如：网络请求）的时候，
+		两种方式：1、创建一个子线程
+	                  2、使用Android提供的AsyncTask。
+
+AsyncTask也是处理耗时操作的一种方式，比第一种方式更节省代码。
+
+AsyncTask就是一个封装过的后台任务类顾名思义就是异步任务，方便我们维护，
+Android开发网提示这样的好处可以解决一些线程安全问题，
+AsyncTask直接继承于Object类，位置为 android.os.AsyncTask。
+要使用AsyncTask工作我们要提供三个泛型参数，并重载四个方法(至少重载一个)。
+
+AsyncTask类的特点：：
+1、execute方法必须在UI Thread中调用； 
+2、该类的实例必须在UI Thread中创建；
+3、不需手动调用onPreExecute(), onPostExecute(Result)，doInBackground(Params...), onProgressUpdate(Progress...)这几个方法。
